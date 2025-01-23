@@ -29,11 +29,9 @@ export default function Repositories() {
   } = useRepositories({ page: 1, name: "a", perPage: 100 });
 
   const handleLoadMore = () => {
-    console.log("Searching more");
     loadMore();
   };
   const onSearch = (query: string) => {
-    console.log("Searching", query);
     getData({ name: query, page: 1 });
   };
 

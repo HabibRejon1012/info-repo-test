@@ -20,11 +20,9 @@ export default function Users() {
   } = useUsers({ page: 1, name: "a" });
 
   const handleLoadMore = () => {
-    console.log("Searching more");
     loadMore();
   };
   const onSearch = (query: string) => {
-    console.log("Searching", query);
     getData({ name: query, page: 1 });
   };
 
@@ -41,6 +39,7 @@ export default function Users() {
       )}
       bodySection={(size) => {
         return (
+       
 <ListScaffold
             loading={loading}
             paddingBottom={size}
