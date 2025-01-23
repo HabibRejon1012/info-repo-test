@@ -41,7 +41,7 @@ export default function Users() {
       )}
       bodySection={(size) => {
         return (
-          <ListScaffold
+<ListScaffold
             loading={loading}
             paddingBottom={size}
             handleLoadMore={handleLoadMore}
@@ -66,6 +66,9 @@ export default function Users() {
                   <Text className={"text-xl font-semibold"}>
                     {item.githubName}
                   </Text>
+                  <Text className={"text-md color-gray-500"}>
+                    {item.type === "User"? "User" : "Organization"}
+                  </Text>
                 </View>
                 <View className=" flex items-center justify-center">
                   <Icons name={IconName.MENU_RIGHT} size={24} color="black" />
@@ -73,6 +76,8 @@ export default function Users() {
               </Pressable>
             )}
           />
+      
+         
         );
       }}
     />
