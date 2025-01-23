@@ -1,74 +1,48 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Link } from "expo-router";
+import { Pressable, ScrollView, Text, View } from "react-native";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { IconName, Icons } from "../../components/Icons";
+import { CardDeviceInfo } from "../../components/CardDeviceInfo";
+import React from "react";
+import { Routes } from "../../consts/Routes";
 
-export default function HomeScreen() {
+
+export default function Index() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <View className="flex-1 p-3 mt-3 justify-center items-center" >
+      <View className="items-center">
+        <Icons name={IconName.GITHUB} size={54} color="black" />
+        <Text className="text-3xl color-gray-800 font-semibold text-center">
+        Github Searcher 
+        </Text>
+        <Text className="text-xl color-gray-500 mt-3">
+        What would you like to search for?
+        </Text>
+      </View>
+      <View className="mt-5"></View>
+    
+      <View className="min-w-60">
+        <Link className="text-lg font-medium"href={Routes.USERS} asChild>
+          <Pressable className="flex flex-row  p-4 border-gray-400 rounded-lg border justify-between">
+            <Icons name={IconName.USERS} size={24} color={"black"} />
+            <Text className="text-lg ml-3 x">Users</Text>
+            <Icons name={IconName.MENU_RIGHT} size={24} color={"black"} />
+          </Pressable>
+        </Link>
+        <View className=" mt-5"></View>
+        <Link className="text-lg font-medium" href={Routes.REPOSITORIES} asChild>
+          <Pressable className="flex flex-row p-4 min-w-40 border-gray-400 rounded-lg border justify-between">
+            <Icons name={IconName.REPOSITORY} size={24} color={"black"} />
+            <Text className="text-lg">Repositories</Text>
+            <Icons name={IconName.MENU_RIGHT} size={24} color={"black"} />
+          </Pressable>
+        </Link>
+      </View>
+
+      <View className="mt-5" style={{width: 300}}>
+       <CardDeviceInfo />
+      </View>
+      
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
