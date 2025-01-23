@@ -43,7 +43,7 @@ describe("Testing repositories page", () => {
     
     
   it("should render Repositories component", () => {
-    (useRepositories as jest.Mock).mockResolvedValue({
+    (useRepositories as jest.Mock).mockReturnValue({
         data: [],
         loading: false,
         error: null,
