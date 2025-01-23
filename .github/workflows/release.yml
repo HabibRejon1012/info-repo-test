@@ -1,4 +1,7 @@
-on: [merge]
+on: 
+  push:
+    branches:
+      - main
 jobs:
   preview:
     runs-on: ubuntu-latest
