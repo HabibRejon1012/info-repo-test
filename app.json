@@ -36,6 +36,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "60851b58-5496-43fd-8eeb-49f2ab4beb61"
+      }
+    },
+    "owner": "habibrejon1012"
   }
 }
