@@ -14,7 +14,7 @@ import { UserService } from "./UserService";
 
 export class GithubService implements UserService, RepositoryService {
   constructor(
-    private apiKey: string | undefined = process.env.EXPO_PUBLIC_API_GITHUB_KEY,
+    private apiKey: string | undefined = process.env.API_GITHUB_KEY,
     private apiUrl: string | undefined = process.env.EXPO_PUBLIC_API_GITHUB_URL
   ) {
     if (!apiKey) throw new Error("Api key is mandatory.");
