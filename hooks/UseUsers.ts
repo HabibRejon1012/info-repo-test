@@ -9,7 +9,7 @@ import { ResultData } from "@/models/Core";
 const githubService = new GithubService()
 
 export default function useUsers(params: UserFilterParams): ResultData<User, UserFilterParams>  {
-    const serviceReference = useRef<GithubService>(githubService)
+    const serviceReference = useRef<UserService>(githubService)
     const [loading, setLoading] = useState(false)
     const [isLoadingMore, setLoadingMore] = useState(false)
     const [error, setError] = useState<string | null>(null)
