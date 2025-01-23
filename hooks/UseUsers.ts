@@ -22,19 +22,14 @@ export default function useUsers(params: UserFilterParams): ResultData<User, Use
         getData(params)
     }, [])
 
-    useEffect(() => {
-        console.log(users.length)
-    }, [users])
+   
 
     const loadMoreUsers = async () => {
-        console.log("entre aqui 2", loading, isLoadingMore)
 
-        if(loading || isLoadingMore || isComplete || users.length === 0) return
+        if(loading || isLoadingMore || isComplete) return
         setLoadingMore(true)
         pageParams.current = {...pageParams.current, page: pageParams.current.page + 1}
-        console.log("starting request")
         const newUsers = await serviceReference.current.getUsers(pageParams.current)
-        console.log("fdsfds",serviceReference.current)
         setUsers(prev => [...prev, ...newUsers.items])
         if(newUsers.items.length == 0){
             setComplete(true)
@@ -57,7 +52,6 @@ export default function useUsers(params: UserFilterParams): ResultData<User, Use
 
     const getData = async (params: UserFilterParams) => {
         try{
-            console.log("entre aqui")
             setLoading(true)
             pageParams.current = {...params, page: 1}
             const newUsers = await serviceReference.current.getUsers(pageParams.current)
