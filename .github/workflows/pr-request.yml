@@ -27,7 +27,7 @@ jobs:
         run: npm run test
       
       - name: 🛠 Debug PR branch
-        run: echo "Branch ${{ github.event.pull_request.head.ref }}"
+        run: echo " Branch ${{ github.event.pull_request.head.ref }}"
 
       - name: 🚀 Create preview
         uses: expo/expo-github-action/preview@v8
