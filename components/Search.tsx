@@ -21,7 +21,7 @@ export default function SearchBar({placeHolder, onSearch, debounceTime = 500}: P
     }, [debouncedSearchQuery]);
   
     return <View>
-        <TextInput className=" rounded-lg border-2 border-gray-200 p-5" style={{backgroundColor: dark ? "gray" : "white"}}  placeholder={placeHolder} value={searchQuery}
+        <TextInput placeholderTextColor={dark? "white" : undefined} className=" rounded-lg border-2 border-gray-400 p-5" style={{backgroundColor: colors.background, borderColor: colors.border}}  placeholder={placeHolder} value={searchQuery}
         onChangeText={(text) => setSearchQuery(text)} ></TextInput>
         </View>
 }

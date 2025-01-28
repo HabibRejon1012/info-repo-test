@@ -63,7 +63,7 @@ export default function Repositories() {
           }
           renderItem={(item) => (
             <Pressable
-              className="flex flex-row mx-3 p-4 rounded-md border-2 border-solid" style={{backgroundColor: colors.primary, borderColor: colors.border}}
+              className="flex flex-row mx-3 p-4 rounded-md border-2 border-solid" style={{backgroundColor: colors.background, borderColor: colors.border}}
               onPress={() => openUrl(item.url)}
             >
               <View className="flex flex-col ml-3 mr-3 flex-1">

@@ -15,7 +15,6 @@ export default function RootLayout() {
     ...DarkTheme,
     colors: {
       ...DarkTheme.colors,
-      primary: "#222222",
       background: "#222222",
       text: "#FFFFFF",
       border: "rgb(61, 68, 77)"
@@ -31,7 +30,7 @@ export default function RootLayout() {
     },
   };
 
-  const theme = scheme === "dark" ? CustomDarkTheme : CustomDarkTheme;
+  const theme = scheme === "dark" ? CustomDarkTheme : CustomDefaultTheme;
 
   return (
     <ThemeProvider value={theme}>
