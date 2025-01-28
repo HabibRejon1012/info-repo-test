@@ -30,7 +30,7 @@ export default function RootLayout() {
     },
   };
 
-  const theme = scheme === "dark" ? CustomDarkTheme : CustomDarkTheme;
+  const theme = scheme === "dark" ? CustomDarkTheme : CustomDefaultTheme;
 
   return (
     <ThemeProvider value={theme}>
