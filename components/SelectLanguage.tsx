@@ -38,7 +38,7 @@ export function SelectLanguage(){
       i18n.changeLanguage(lang);
     };
 
-    console.log(currentLanguage)
+
 
     return  <View>
         <Text className="mb-3" style={{color: colors.text}}>{t("languages.select")}</Text>

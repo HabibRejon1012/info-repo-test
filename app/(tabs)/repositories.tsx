@@ -20,6 +20,7 @@ import { useTheme } from "@react-navigation/native";
 
 export default function Repositories() {
   const {t} = useTranslation()
+  console.log(t("searcher.noItems"))
   const {colors} = useTheme()
   const {
     loading,

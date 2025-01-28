@@ -5,7 +5,6 @@ import { IconName, Icons } from "../../components/Icons";
 import { CardDeviceInfo } from "../../components/CardDeviceInfo";
 import React from "react";
 import { Routes } from "../../consts/Routes";
-import { SelectOptions } from "../../components/SelectOptions";
 import { useTranslation } from "react-i18next";
 import { SelectLanguage } from "../../components/SelectLanguage";
 import { useTheme } from "@react-navigation/native";
