@@ -1,0 +1,34 @@
+{
+
+    "home": {
+        "name": "Inicio",
+        "title": "Buscador de github",
+        "description": "¿Que te gustaría buscar?"
+    },
+    "users": {
+        "title": "Usuarios",
+        "search": "Buscar usuarios"
+    },
+    "repositories": {
+        "title": "Repositorios",
+        "search": "Buscar un repositorio"
+    },
+    "searcher": {
+        "totalItems": "Total de elementos",
+        "noItems": "No hay elementos"
+    },
+    "languages": {
+        "select": "Seleccionar lenguaje",
+        "en-US": "Ingles",
+        "es-MX": "Español"
+    },
+    "infoApp": {
+        "title": "Información de la App",
+        "version": "Version",
+        "system": "Sistema",
+        "os":  "SO"
+    }
+
+
+
+}

@@ -1,0 +1,33 @@
+{
+
+    "home": {
+        "name": "Home",
+        "title": "Github Searcher",
+        "description": "What would you like to search for?"
+    },
+    "users": {
+        "title": "Users",
+        "search": "Search user"
+    },
+    "repositories": {
+        "title": "Repositories",
+        "search": "Search repositories"
+    },
+    "searcher": {
+        "totalItems": "Total items",
+        "noItems": "No items"
+    },
+    "languages": {
+        "select": "Select a language",
+        "en-US": "English",
+        "es-MX": "Spanish"
+    },
+    "infoApp": {
+        "title": "App Info",
+        "version": "Version",
+        "system": "System",
+        "os":  "OS"
+    }
+
+
+}
