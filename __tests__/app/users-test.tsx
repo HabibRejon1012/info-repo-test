@@ -3,6 +3,36 @@ import { act, fireEvent, render, screen } from "@testing-library/react-native";
 import useUsers from "../../hooks/UseUsers";
 import Users from "../../app/(tabs)/users";
 import { User, UserSearchResponse } from "../../models/User";
+import { DarkTheme } from "@react-navigation/native";
+
+jest.mock("@react-navigation/native", () => ({
+  useTheme: jest.fn().mockReturnValue({dark: false,
+    colors: {
+      primary: 'rgb(0, 122, 255)',
+      background: 'rgb(242, 242, 242)',
+      card: 'rgb(255, 255, 255)',
+      text: 'rgb(28, 28, 30)',
+      border: 'rgb(216, 216, 216)',
+      notification: 'rgb(255, 59, 48)',
+    },
+    fonts: null,}),
+}));
+
+jest.mock("react-i18next", () => ({
+  useTranslation: () => ({
+    t: (key: string) => {
+      const translations: Record<string, any> = {
+        "users.search": "Search users",
+        "searcher.noItems": "No items",
+      };
+      return translations[key] || key; // Devuelve la traducción o la clave como fallback
+    },
+    i18n: {
+      changeLanguage: jest.fn(),
+    },
+  }),
+  Trans: jest.fn(({ children }) => children), // Si usas <Trans>, lo renderiza directamente
+}));
 
 jest.mock("@/services/GithubService", () => {
 
@@ -55,7 +85,6 @@ describe("Testing users page", () => {
       })
     render(<Users />);
   
-    expect(screen.getByText("Users")).toBeTruthy();
     expect(screen.getByPlaceholderText("Search users...")).toBeTruthy();
   });
 

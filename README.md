@@ -7,7 +7,7 @@ Before using the app, ensure you have the following:
 
 - **Expo Go App**: Download it from the [Play Store](https://play.google.com) or [App Store](https://www.apple.com/app-store/).
 - Scan the following QR code.
-- ![alt text](image-1.png)
+- ![alt text](image.png)
 
 ## Getting Started
 

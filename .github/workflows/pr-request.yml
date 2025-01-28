@@ -3,7 +3,8 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     permissions:
-      actions: read
+      actions: write
+      contents: write
     steps:
       - name: 🏗 Setup repo
         uses: actions/checkout@v3
@@ -24,6 +25,9 @@ jobs:
 
       - name: 📦 Verify unit tests.
         run: npm run test
+      
+      - name: 🛠 Debug PR branch
+        run: echo "Branch ${{ github.event.pull_request.head.ref }}"
 
       - name: 🚀 Create preview
         uses: expo/expo-github-action/preview@v8
